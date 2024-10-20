@@ -9,7 +9,7 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [filteredArr, setFilteredArr] = useState([]);
   const filterHandler = () => {
-    setFilteredArr(starFilter(resList));
+    setFilteredArr(starFilter(restaurantsList));
   };
 
   const fetchData = () => {
