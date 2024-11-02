@@ -3,13 +3,14 @@ import RestaurantCards from "./RestaurantCard";
 import { starFilter } from "../utils/starFilter";
 import { RES_URL } from "../utils/constants";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [restaurantsList, setRestaurantsList] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [filteredArr, setFilteredArr] = useState([]);
   const filterHandler = () => {
-    setFilteredArr(starFilter(resList));
+    setFilteredArr(starFilter(restaurantsList));
   };
 
   const fetchData = () => {
@@ -64,7 +65,11 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filteredArr.map((resData) => {
-          return <RestaurantCards key={resData.info.id} resData={resData} />;
+          return (
+            <Link className="res-card" key={resData.info.id} to={"/restaurants/" + resData.info.id}>
+              <RestaurantCards resData={resData} />
+            </Link>
+          );
         })}
       </div>
     </div>

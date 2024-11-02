@@ -30,6 +30,8 @@
     padding: 5px;
     box-sizing: border-box;
     margin: 5px;
+    text-decoration: none;
+    color: black;
 }
 
 @media screen and (max-width: 960px) {
