@@ -114,3 +114,8 @@
     width: 4.5rem;
     height: 1.75rem;
 }
+
+.user-card{
+    padding: 0.825rem;
+    border: 1px solid red;
+}
